@@ -8,40 +8,44 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed;
 
-    private Vector3 target;
-    private Vector3 moveDirection;
+    private Vector3 _target;
+    private Vector3 _moveDirection;
     
     [SerializeField] private DetectZone upZone;
     [SerializeField] private DetectZone leftZone;
     [SerializeField] private DetectZone downZone;
     [SerializeField] private DetectZone rightZone;
     
-    private bool isRunning;
+    private bool _isRunning;
     
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer _spriteRenderer;
+
+    private StrokeCounter _strokeCounter;
     
     [HideInInspector]
     public bool isCanWalk;
     
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        _strokeCounter = GameObject.Find("Sokoban Stroke Counter").GetComponent<StrokeCounter>();
 
         StartCoroutine(PauseBeforePlay());
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if(!isRunning && context.performed && isCanWalk)
+        if(!_isRunning && context.performed && isCanWalk)
         {
-            moveDirection = context.ReadValue<Vector2>();
+            _moveDirection = context.ReadValue<Vector2>();
 
-            if (moveDirection.x != 0 && moveDirection.y != 0)
+            if (_moveDirection.x != 0 && _moveDirection.y != 0)
                 return;
             
             if(CheckFreeWay())
             {
-                isRunning = true;
+                _isRunning = true;
                 SetTarget();
                 StartCoroutine(Move());
             }
@@ -50,7 +54,7 @@ public class PlayerController : MonoBehaviour
     
     void SetTarget()
     {
-        target = transform.position + moveDirection;
+        _target = transform.position + _moveDirection;
     }
 
     IEnumerator PauseBeforePlay()
@@ -62,47 +66,48 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Move()
     {
-        while (Vector3.Distance(transform.position, target) > float.Epsilon)
+        while (Vector3.Distance(transform.position, _target) > float.Epsilon)
         {
             transform.position = Vector3.MoveTowards(transform.position,
-                target,
+                _target,
                 speed * Time.deltaTime);
             yield return null;
         }
-        isRunning = false;
+        _isRunning = false;
     }
 
     bool CheckFreeWay()
     {
         GameObject detectedObject = null;
 
-        if(moveDirection.x > 0)
+        if(_moveDirection.x > 0)
         {
             detectedObject = rightZone.DetectedObject;
-            spriteRenderer.flipX = true;
+            _spriteRenderer.flipX = true;
         }
-        if(moveDirection.x < 0)
+        if(_moveDirection.x < 0)
         {
             detectedObject = leftZone.DetectedObject;
-            spriteRenderer.flipX = false;
+            _spriteRenderer.flipX = false;
         }
 
-        if(moveDirection.y > 0)
+        if(_moveDirection.y > 0)
             detectedObject = upZone.DetectedObject;
-        if(moveDirection.y < 0)
+        if(_moveDirection.y < 0)
             detectedObject = downZone.DetectedObject;
 
 
-        if(detectedObject == null)
+        if(detectedObject == null || detectedObject.TryGetComponent(out SokobanZone _))
         {
-            //TODO stroke
+            _strokeCounter.Stroke();
             return true;
         }
         else
         {
             if (detectedObject.TryGetComponent(out Chest chest))
             {
-                chest.SetMoveDirection(moveDirection);
+                chest.SetMoveDirection(_moveDirection);
+                _strokeCounter.Stroke();
             }
         }
         

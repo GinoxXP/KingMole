@@ -4,20 +4,20 @@ namespace DefaultNamespace
 {
     public class DetectZone : MonoBehaviour
     {
-        public GameObject detectedObject;
-        public GameObject DetectedObject => detectedObject;
+        private GameObject _detectedObject;
+        public GameObject DetectedObject => _detectedObject;
 
         void OnTriggerStay2D(Collider2D collider)
         {
             if(collider.gameObject.TryGetComponent(out Rigidbody2D rb))
-                if(detectedObject != rb.gameObject)
-                    detectedObject = rb.gameObject;
+                if(_detectedObject != rb.gameObject)
+                    _detectedObject = rb.gameObject;
         }
 
         void OnTriggerExit2D(Collider2D collider)
         {
             if(collider.gameObject.TryGetComponent(out Rigidbody2D rb))
-                detectedObject = null;
+                _detectedObject = null;
         }
     }
 }

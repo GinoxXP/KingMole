@@ -6,14 +6,14 @@ using UnityEngine;
 public class Chest : MonoBehaviour
 {
     [SerializeField] float speed;
-    private Vector3 target;
+    private Vector3 _target;
 
     [SerializeField] DetectZone upZone;
     [SerializeField] DetectZone leftZone;
     [SerializeField] DetectZone downZone;
     [SerializeField] DetectZone rightZone;
 
-    private bool isMoving;
+    private bool _isMoving;
 
     public void SetMoveDirection(Vector3 moveDirection)
     {
@@ -30,9 +30,9 @@ public class Chest : MonoBehaviour
             detectedObject = downZone.DetectedObject;
 
 
-        if(detectedObject == null)
+        if(detectedObject == null || detectedObject.TryGetComponent(out SokobanZone _))
         {
-            isMoving = true;
+            _isMoving = true;
             SetTarget(moveDirection);
             StartCoroutine(Move());
         }
@@ -40,18 +40,18 @@ public class Chest : MonoBehaviour
 
     void SetTarget(Vector3 moveDirection)
     {
-        target = transform.position + moveDirection;
+        _target = transform.position + moveDirection;
     }
 
     IEnumerator Move()
     {
-        while (Vector3.Distance(transform.position, target) > float.Epsilon)
+        while (Vector3.Distance(transform.position, _target) > float.Epsilon)
         {
             transform.position = Vector3.MoveTowards(transform.position,
-                target,
+                _target,
                 speed * Time.deltaTime);
             yield return null;
         }
-        isMoving = false;
+        _isMoving = false;
     }
 }
