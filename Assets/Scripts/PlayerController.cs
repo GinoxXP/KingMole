@@ -98,9 +98,14 @@ public class PlayerController : MonoBehaviour
             //TODO stroke
             return true;
         }
+        else
+        {
+            if (detectedObject.TryGetComponent(out Chest chest))
+            {
+                chest.SetMoveDirection(moveDirection);
+            }
+        }
         
-        //TODO box moving
-
         return false;
     }
 }
