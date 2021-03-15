@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
-        _strokeCounter = GameObject.Find("Sokoban Stroke Counter").GetComponent<StrokeCounter>();
+        _strokeCounter = GameObject.Find("Stroke Counter").GetComponent<StrokeCounter>();
 
         StartCoroutine(PauseBeforePlay());
     }
@@ -107,6 +107,12 @@ public class PlayerController : MonoBehaviour
             if (detectedObject.TryGetComponent(out Chest chest))
             {
                 chest.SetMoveDirection(_moveDirection);
+                _strokeCounter.Stroke();
+            }
+
+            if (detectedObject.TryGetComponent(out Enemy enemy))
+            {
+                enemy.SetMoveDirection(_moveDirection);
                 _strokeCounter.Stroke();
             }
         }
