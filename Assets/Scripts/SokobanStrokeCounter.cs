@@ -1,12 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace DefaultNamespace
 {
+    [RequireComponent(typeof(LoadScene))]
     public class SokobanStrokeCounter : MonoBehaviour, StrokeCounter
     {
         private List<SokobanZone> sokobanZones = new List<SokobanZone>();
+        private LoadScene _loadScene;
+
+        private void Start()
+        {
+            _loadScene = GetComponent<LoadScene>();
+        }
 
         public void AddSokobanZone(SokobanZone sokobanZone)
         {
@@ -23,8 +31,7 @@ namespace DefaultNamespace
             yield return new WaitForSeconds(.2f);
             
             if(AllZonesIsFull())
-                //TODO load next level
-                Debug.Log("All zones is full");
+                _loadScene.Load();
 
             yield return null;
         }
