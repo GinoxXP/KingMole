@@ -12,7 +12,7 @@ namespace DefaultNamespace
 
         private void Start()
         {
-            _sokobanStrokeCounter = GameObject.Find("Sokoban Stroke Counter").GetComponent<SokobanStrokeCounter>();
+            _sokobanStrokeCounter = GameObject.Find("Stroke Counter").GetComponent<SokobanStrokeCounter>();
             _sokobanStrokeCounter.AddSokobanZone(this);
         }
 
