@@ -6,6 +6,33 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Defense/DLevel1.unity
+    guid: f410688a32157cfd99e2aa242670115f
+  - enabled: 1
+    path: Assets/Scenes/Defense/DLevel2.unity
+    guid: 36c0750ebcc3d53f7ad4441eb653c684
+  - enabled: 1
+    path: Assets/Scenes/Defense/DLevel3.unity
+    guid: 7e6b72a86411fe40892839f4f66aafe1
+  - enabled: 1
+    path: Assets/Scenes/Defense/DLevel4.unity
+    guid: 012056dc3de553f3f90382e3ad2ce447
+  - enabled: 1
+    path: Assets/Scenes/Defense/DLevel5.unity
+    guid: 62e1807aa7f7039f4b0ab55777fd6816
+  - enabled: 1
+    path: Assets/Scenes/Defense/DLevel6.unity
+    guid: 25c6751fac50e29b088d1833775e0bab
+  - enabled: 1
+    path: Assets/Scenes/Defense/DLevel7.unity
+    guid: 3c56063c1325588bdad22fa48c48c506
+  - enabled: 1
+    path: Assets/Scenes/Defense/DLevel8.unity
+    guid: 77acc002d1c47e979910843ff02fa1fb
+  - enabled: 1
+    path: Assets/Scenes/Defense/DLevel9.unity
+    guid: fb7b57c6b427a30cca8fd996e59b9d0a
+  - enabled: 1
+    path: Assets/Scenes/Defense/DLevel10.unity
+    guid: b010fa5f300138ec18090f65b4a8cf32
   m_configObjects: {}
