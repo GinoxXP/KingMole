@@ -35,4 +35,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Defense/DLevel10.unity
     guid: b010fa5f300138ec18090f65b4a8cf32
+  - enabled: 1
+    path: Assets/Scenes/Defense/DLevel11.unity
+    guid: 8e962f3780cad040986a41960a4fe828
+  - enabled: 1
+    path: Assets/Scenes/Defense/DLevel12.unity
+    guid: cc3c2140f63802bdaab66c1098a457fe
+  - enabled: 1
+    path: Assets/Scenes/Defense/DLevel13.unity
+    guid: a3c4df4029cc3b8e193d0dcafee33585
+  - enabled: 1
+    path: Assets/Scenes/Defense/DLevel14.unity
+    guid: f9c46187decda93fbb2856f413303947
+  - enabled: 1
+    path: Assets/Scenes/Defense/DLevel15.unity
+    guid: 7dbe33101061f04aca970f2f7cadb975
+  - enabled: 1
+    path: Assets/Scenes/Defense/DLevel16.unity
+    guid: 9f42c7b4c274bf8119fc8491b1eedfdd
+  - enabled: 1
+    path: Assets/Scenes/Defense/DLevel17.unity
+    guid: b4ec8e483bb79082fb04521b742cfd48
+  - enabled: 1
+    path: Assets/Scenes/Defense/DLevel18.unity
+    guid: eea4307d4fc151070961a73b5ccdf718
+  - enabled: 1
+    path: Assets/Scenes/Defense/DLevel19.unity
+    guid: 208c09370b81c1c9d9767dbf276cee55
   m_configObjects: {}
