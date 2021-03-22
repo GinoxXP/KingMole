@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -78,45 +79,52 @@ public class PlayerController : MonoBehaviour
 
     bool CheckFreeWay()
     {
-        GameObject detectedObject = null;
+        List<GameObject> detectedObjects = null;
 
         if(_moveDirection.x > 0)
         {
-            detectedObject = rightZone.DetectedObject;
+            detectedObjects = rightZone.detectedObjects;
             _spriteRenderer.flipX = true;
         }
         if(_moveDirection.x < 0)
         {
-            detectedObject = leftZone.DetectedObject;
+            detectedObjects = leftZone.detectedObjects;
             _spriteRenderer.flipX = false;
         }
 
         if(_moveDirection.y > 0)
-            detectedObject = upZone.DetectedObject;
+            detectedObjects = upZone.detectedObjects;
         if(_moveDirection.y < 0)
-            detectedObject = downZone.DetectedObject;
+            detectedObjects = downZone.detectedObjects;
 
 
-        if(detectedObject == null || detectedObject.TryGetComponent(out SokobanZone _))
-        {
-            _strokeCounter.Stroke();
-            return true;
-        }
-        else
-        {
-            if (detectedObject.TryGetComponent(out Chest chest))
-            {
-                chest.SetMoveDirection(_moveDirection);
-                _strokeCounter.Stroke();
-            }
-
-            if (detectedObject.TryGetComponent(out Enemy enemy))
-            {
-                enemy.SetMoveDirection(_moveDirection);
-                _strokeCounter.Stroke();
-            }
-        }
+        bool isFreeWay = true;
         
-        return false;
+        foreach (var detectedObject in detectedObjects)
+        {
+            if(detectedObject == null || detectedObject.TryGetComponent(out SokobanZone _))
+            {
+                _strokeCounter.Stroke();
+                if(isFreeWay)
+                    isFreeWay = true;
+            }
+            else
+            {
+                isFreeWay = false;
+                if (detectedObject.TryGetComponent(out Chest chest))
+                {
+                    chest.SetMoveDirection(_moveDirection);
+                    _strokeCounter.Stroke();
+                }
+
+                if (detectedObject.TryGetComponent(out Enemy enemy))
+                {
+                    enemy.SetMoveDirection(_moveDirection);
+                    _strokeCounter.Stroke();
+                }
+            }
+        }
+
+        return isFreeWay;
     }
 }

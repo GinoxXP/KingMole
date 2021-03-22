@@ -1,23 +1,22 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace DefaultNamespace
 {
     public class DetectZone : MonoBehaviour
     {
-        private GameObject _detectedObject;
-        public GameObject DetectedObject => _detectedObject;
+        public List<GameObject> detectedObjects;
 
-        void OnTriggerStay2D(Collider2D collider)
+        void OnTriggerEnter2D(Collider2D collider)
         {
             if(collider.gameObject.TryGetComponent(out Rigidbody2D rb))
-                if(_detectedObject != rb.gameObject)
-                    _detectedObject = rb.gameObject;
+                detectedObjects.Add(rb.gameObject);
         }
 
         void OnTriggerExit2D(Collider2D collider)
         {
             if(collider.gameObject.TryGetComponent(out Rigidbody2D rb))
-                _detectedObject = null;
+                detectedObjects.Remove(rb.gameObject);
         }
     }
 }

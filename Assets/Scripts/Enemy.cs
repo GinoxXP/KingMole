@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -23,22 +24,9 @@ namespace DefaultNamespace
             _strokeCounter.AddEnemy(this);
         }
 
-        public void SetMoveDirection(Vector3 moveDirection)
+        public void SetMoveDirection(Vector2 moveDirection)
         {
-            GameObject detectedObject = null;
-
-            if(moveDirection.x > 0)
-                detectedObject = rightZone.DetectedObject;
-            if(moveDirection.x < 0)
-                detectedObject = leftZone.DetectedObject;
-
-            if(moveDirection.y > 0)
-                detectedObject = upZone.DetectedObject;
-            if(moveDirection.y < 0)
-                detectedObject = downZone.DetectedObject;
-
-
-            if(detectedObject == null || detectedObject.TryGetComponent(out SokobanZone _))
+            if(CheckFreeWay(moveDirection))
             {
                 _isMoving = true;
                 SetTarget(moveDirection);
@@ -50,7 +38,40 @@ namespace DefaultNamespace
                 //TODO death animation
             }
         }
+        
+        bool CheckFreeWay(Vector2 moveDirection)
+        {
+            List<GameObject> detectedObjects = null;
+    
+            if(moveDirection.x > 0)
+                detectedObjects = rightZone.detectedObjects;
+            if(moveDirection.x < 0)
+                detectedObjects = leftZone.detectedObjects;
 
+            if(moveDirection.y > 0)
+                detectedObjects = upZone.detectedObjects;
+            if(moveDirection.y < 0)
+                detectedObjects = downZone.detectedObjects;
+    
+    
+            bool isFreeWay = true;
+            
+            foreach (var detectedObject in detectedObjects)
+            {
+                if(detectedObject == null || detectedObject.TryGetComponent(out SokobanZone _))
+                {
+                    if(isFreeWay)
+                        isFreeWay = true;
+                }
+                else
+                {
+                    isFreeWay = false;
+                }
+            }
+    
+            return isFreeWay;
+        }
+        
         void SetTarget(Vector3 moveDirection)
         {
             _target = transform.position + moveDirection;
