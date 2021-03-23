@@ -98,4 +98,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sokoban/SLevel11.unity
     guid: 3142d92de3d2236478ed7611509092aa
+  - enabled: 1
+    path: Assets/Scenes/Sokoban/SLevel12.unity
+    guid: 1d61589f21eaafd98bdde6856155fac3
+  - enabled: 1
+    path: Assets/Scenes/Sokoban/SLevel13.unity
+    guid: 07f98cd6dc08217eab9d4c77bc628e6b
   m_configObjects: {}
