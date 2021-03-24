@@ -39,7 +39,8 @@ public class PlayerController : MonoBehaviour
     {
         if(!_isRunning && context.performed && isCanWalk)
         {
-            _moveDirection = context.ReadValue<Vector2>();
+            _moveDirection = context.ReadValue<Vector2>().normalized;
+            
 
             if (_moveDirection.x != 0 && _moveDirection.y != 0)
                 return;
@@ -60,6 +61,8 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator PauseBeforePlay()
     {
+        if(Gamepad.current != null)
+            Gamepad.current.SetMotorSpeeds(0, 0);
         yield return new WaitForSeconds(0.2f);
         isCanWalk = true;
         yield return null;
@@ -115,12 +118,14 @@ public class PlayerController : MonoBehaviour
                 {
                     chest.SetMoveDirection(_moveDirection);
                     _strokeCounter.Stroke();
+                    StartCoroutine(Rumble());
                 }
 
                 if (detectedObject.TryGetComponent(out Enemy enemy))
                 {
                     enemy.SetMoveDirection(_moveDirection);
                     _strokeCounter.Stroke();
+                    StartCoroutine(Rumble());
                 }
             }
         }
@@ -129,5 +134,17 @@ public class PlayerController : MonoBehaviour
             _strokeCounter.Stroke();
 
         return isFreeWay;
+    }
+
+    IEnumerator Rumble()
+    {
+        if (Gamepad.current != null)
+        {
+            Gamepad.current.SetMotorSpeeds(0.25f, 0.75f);
+            yield return new WaitForSeconds(0.2f);
+        
+            Gamepad.current.SetMotorSpeeds(0, 0);
+        }
+        yield return null;
     }
 }
