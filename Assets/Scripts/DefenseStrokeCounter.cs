@@ -8,7 +8,9 @@ namespace DefaultNamespace
     [RequireComponent(typeof(LoadScene))]
     public class DefenseStrokeCounter : MonoBehaviour, StrokeCounter
     {
-        [SerializeField] private float strokesLeft;
+        [SerializeField] private int strokesLeft;
+        public int StokesLeft => strokesLeft;
+        
         private LoadScene _loadScene;
 
         private List<Enemy> _enemies = new List<Enemy>();
