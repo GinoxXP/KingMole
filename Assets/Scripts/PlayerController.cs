@@ -124,6 +124,9 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+        
+        if(isFreeWay)
+            _strokeCounter.Stroke();
 
         return isFreeWay;
     }
