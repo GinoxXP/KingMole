@@ -294,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 666529228956630698, guid: 54c3ad3cff0137746b005d4d15791919, type: 3}
       propertyPath: strokesLeft
-      value: 90
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 666529228956630699, guid: 54c3ad3cff0137746b005d4d15791919, type: 3}
       propertyPath: sceneName
