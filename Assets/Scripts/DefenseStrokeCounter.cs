@@ -15,9 +15,13 @@ namespace DefaultNamespace
 
         private List<Enemy> _enemies = new List<Enemy>();
 
+        private PlayerController _playerController;
+
         private void Start()
         {
             _loadScene = GetComponent<LoadScene>();
+
+            _playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         }
 
         public void Stroke()
@@ -32,6 +36,8 @@ namespace DefaultNamespace
 
         IEnumerator GameOver()
         {
+            _playerController.isCanWalk = false;
+            
             float delayBeforeGameOver = 0.2f;
             yield return new WaitForSeconds(delayBeforeGameOver);
             
@@ -43,10 +49,13 @@ namespace DefaultNamespace
         {
             float delayCheck = 0.2f;
             yield return new WaitForSeconds(delayCheck);
-            
-            if(AllEnemiesAreDefeated())
+
+            if (AllEnemiesAreDefeated())
+            {
+                _playerController.isCanWalk = false;
                 _loadScene.Load();
-            
+            }
+
             yield return null;
         }
 

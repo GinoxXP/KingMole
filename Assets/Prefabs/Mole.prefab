@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c11ab5fcd54201807e0f7bf601df98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectedObjects: []
 --- !u!1 &5597122759001932344
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +120,7 @@ GameObject:
   - component: {fileID: 5597122759078329938}
   m_Layer: 0
   m_Name: Mole
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -350,6 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c11ab5fcd54201807e0f7bf601df98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectedObjects: []
 --- !u!1 &5597122760443706592
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,6 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c11ab5fcd54201807e0f7bf601df98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectedObjects: []
 --- !u!1 &5597122760470731570
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,3 +493,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c11ab5fcd54201807e0f7bf601df98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectedObjects: []
