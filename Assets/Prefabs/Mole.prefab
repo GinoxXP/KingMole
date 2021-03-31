@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 5597122759078329939}
   - component: {fileID: 5597122759078329937}
   - component: {fileID: 5597122759078329938}
+  - component: {fileID: 2955288699878604001}
   m_Layer: 0
   m_Name: Mole
   m_TagString: Player
@@ -281,6 +282,25 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &2955288699878604001
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5597122759078329942}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 706358ac6aa72fe419d97d0c9ea22df4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5597122759287478187
 GameObject:
   m_ObjectHideFlags: 0

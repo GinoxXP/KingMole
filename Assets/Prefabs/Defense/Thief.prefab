@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c11ab5fcd54201807e0f7bf601df98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectedObjects: []
 --- !u!1 &9131655134634146234
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c11ab5fcd54201807e0f7bf601df98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectedObjects: []
 --- !u!1 &9131655134980920748
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c11ab5fcd54201807e0f7bf601df98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectedObjects: []
 --- !u!1 &9131655135245709258
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c11ab5fcd54201807e0f7bf601df98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectedObjects: []
 --- !u!1 &9131655135782695482
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +331,7 @@ GameObject:
   - component: {fileID: 9131655135782695479}
   - component: {fileID: 9131655135782695476}
   - component: {fileID: 9131655135782695477}
+  - component: {fileID: 7445905001374893029}
   m_Layer: 0
   m_Name: Thief
   m_TagString: Untagged
@@ -464,3 +469,22 @@ MonoBehaviour:
   leftZone: {fileID: 9131655134523533422}
   downZone: {fileID: 9131655134634146231}
   rightZone: {fileID: 9131655135245709253}
+--- !u!95 &7445905001374893029
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9131655135782695482}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c10ca9c1be8fb8dc9684ada4c4bbfc9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c11ab5fcd54201807e0f7bf601df98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectedObjects: []
 --- !u!1 &3091768155122963236
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c11ab5fcd54201807e0f7bf601df98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectedObjects: []
 --- !u!1 &3091768155437857589
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c11ab5fcd54201807e0f7bf601df98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectedObjects: []
 --- !u!1 &3091768155609434209
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c11ab5fcd54201807e0f7bf601df98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectedObjects: []
 --- !u!1 &3091768156157395407
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +331,7 @@ GameObject:
   - component: {fileID: 3091768156157395404}
   - component: {fileID: 3091768156157395405}
   - component: {fileID: 3091768156157395406}
+  - component: {fileID: 2223329956734277191}
   m_Layer: 0
   m_Name: Berserker
   m_TagString: Untagged
@@ -464,3 +469,22 @@ MonoBehaviour:
   leftZone: {fileID: 3091768155609434214}
   downZone: {fileID: 3091768155437856970}
   rightZone: {fileID: 3091768155154501056}
+--- !u!95 &2223329956734277191
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3091768156157395407}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e6c18938b3e6f3d0baeaa6a3e9686e8c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

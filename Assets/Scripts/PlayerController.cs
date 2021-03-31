@@ -37,7 +37,8 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if(!_isRunning && context.performed && isCanWalk)
+        if((!_isRunning && context.performed && isCanWalk) || 
+           (Touchscreen.current != null && Touchscreen.current.IsActuated()))
         {
             _moveDirection = context.ReadValue<Vector2>().normalized;
             
@@ -53,7 +54,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    
+
     void SetTarget()
     {
         _target = transform.position + _moveDirection;

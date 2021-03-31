@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6082506416639600030}
   - component: {fileID: 6082506416639600031}
   - component: {fileID: 6082506416639600016}
+  - component: {fileID: 1703998514103176159}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Untagged
@@ -150,6 +151,25 @@ MonoBehaviour:
   leftZone: {fileID: 6082506417677885867}
   downZone: {fileID: 6082506417608359863}
   rightZone: {fileID: 6082506418587732412}
+--- !u!95 &1703998514103176159
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6082506416639600017}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: da4e47a9484fac9cd8db8921ce6ca828, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6082506417181190406
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c11ab5fcd54201807e0f7bf601df98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectedObjects: []
 --- !u!1 &6082506417677885870
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,6 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c11ab5fcd54201807e0f7bf601df98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectedObjects: []
 --- !u!1 &6082506418042158927
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,6 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c11ab5fcd54201807e0f7bf601df98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectedObjects: []
 --- !u!1 &6082506418587732413
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,3 +487,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c11ab5fcd54201807e0f7bf601df98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectedObjects: []
