@@ -17,11 +17,16 @@ namespace DefaultNamespace
 
         private PlayerController _playerController;
 
+        private Curtain _curtain;
+
         private void Start()
         {
             _loadScene = GetComponent<LoadScene>();
 
             _playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+
+            _curtain = GameObject.Find("Curtain").GetComponent<Curtain>();
+            _curtain.loadScene = _loadScene;
         }
 
         public void Stroke()
@@ -41,7 +46,7 @@ namespace DefaultNamespace
             float delayBeforeGameOver = 0.2f;
             yield return new WaitForSeconds(delayBeforeGameOver);
             
-            _loadScene.Reload();
+            _curtain.ReloadLevel();
             yield return null;
         }
 
@@ -53,7 +58,7 @@ namespace DefaultNamespace
             if (AllEnemiesAreDefeated())
             {
                 _playerController.isCanWalk = false;
-                _loadScene.Load();
+                _curtain.NextLevel();
             }
 
             yield return null;
