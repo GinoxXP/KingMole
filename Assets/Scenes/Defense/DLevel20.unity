@@ -298,7 +298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 666529228956630699, guid: 54c3ad3cff0137746b005d4d15791919, type: 3}
       propertyPath: sceneName
-      value: DEnd
+      value: MainMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54c3ad3cff0137746b005d4d15791919, type: 3}
@@ -701,7 +701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4089991015499905738, guid: 56e5311d3fc214a20a468fe6f98347fa, type: 3}
       propertyPath: orthographic size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56e5311d3fc214a20a468fe6f98347fa, type: 3}
