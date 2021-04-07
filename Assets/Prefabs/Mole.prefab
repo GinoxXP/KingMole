@@ -235,6 +235,7 @@ MonoBehaviour:
   leftZone: {fileID: 5597122760470731583}
   downZone: {fileID: 5597122760443706605}
   rightZone: {fileID: 5597122758663063579}
+  strokeDelay: 0.1
   isCanWalk: 0
 --- !u!114 &5597122759078329938
 MonoBehaviour:
