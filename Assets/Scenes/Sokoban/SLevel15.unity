@@ -645,7 +645,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2243185210586545388, guid: 49c56637b23d6da9ba4973b61a6ce003, type: 3}
       propertyPath: sceneName
-      value: SEnd
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 3766920046452623171, guid: 49c56637b23d6da9ba4973b61a6ce003, type: 3}
       propertyPath: m_Name
