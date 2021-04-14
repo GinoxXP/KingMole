@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ThiefIdleAnimation
+  m_Name: BerserkerIdleAnimation
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -2734800647392024937, guid: c90aecbf26da591a9948d70ad298ea75, type: 3}
+      value: {fileID: 3048892388686381023, guid: c90aecbf26da591a9948d70ad298ea75, type: 3}
     - time: 0.5
-      value: {fileID: -6292215929027113611, guid: c90aecbf26da591a9948d70ad298ea75, type: 3}
+      value: {fileID: -4016574229998233168, guid: c90aecbf26da591a9948d70ad298ea75, type: 3}
     - time: 1
-      value: {fileID: -2734800647392024937, guid: c90aecbf26da591a9948d70ad298ea75, type: 3}
+      value: {fileID: 3048892388686381023, guid: c90aecbf26da591a9948d70ad298ea75, type: 3}
     attribute: m_Sprite
-    path: 
+    path: Body
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -37,16 +37,16 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 2073732236
       attribute: 0
       script: {fileID: 0}
       typeID: 212
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -2734800647392024937, guid: c90aecbf26da591a9948d70ad298ea75, type: 3}
-    - {fileID: -6292215929027113611, guid: c90aecbf26da591a9948d70ad298ea75, type: 3}
-    - {fileID: -2734800647392024937, guid: c90aecbf26da591a9948d70ad298ea75, type: 3}
+    - {fileID: 3048892388686381023, guid: c90aecbf26da591a9948d70ad298ea75, type: 3}
+    - {fileID: -4016574229998233168, guid: c90aecbf26da591a9948d70ad298ea75, type: 3}
+    - {fileID: 3048892388686381023, guid: c90aecbf26da591a9948d70ad298ea75, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
