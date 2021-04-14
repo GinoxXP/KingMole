@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class Chest : MonoBehaviour
 {
     [SerializeField] float speed;
@@ -15,8 +16,17 @@ public class Chest : MonoBehaviour
 
     private bool _isMoving;
 
+    private Animator _animator;
+
+    void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
     public void SetMoveDirection(Vector3 moveDirection)
     {
+        _animator.Play("ChestMoveAnimation");
+
         if(CheckFreeWay(moveDirection))
         {
             _isMoving = true;
@@ -24,11 +34,11 @@ public class Chest : MonoBehaviour
             StartCoroutine(Move());
         }
     }
-    
+
     bool CheckFreeWay(Vector2 moveDirection)
     {
         List<GameObject> detectedObjects = null;
-    
+
         if(moveDirection.x > 0)
             detectedObjects = rightZone.detectedObjects;
         if(moveDirection.x < 0)
@@ -38,10 +48,10 @@ public class Chest : MonoBehaviour
             detectedObjects = upZone.detectedObjects;
         if(moveDirection.y < 0)
             detectedObjects = downZone.detectedObjects;
-    
-    
+
+
         bool isFreeWay = true;
-            
+
         foreach (var detectedObject in detectedObjects)
         {
             if(detectedObject == null || detectedObject.TryGetComponent(out SokobanZone _))
@@ -54,7 +64,7 @@ public class Chest : MonoBehaviour
                 isFreeWay = false;
             }
         }
-    
+
         return isFreeWay;
     }
 
